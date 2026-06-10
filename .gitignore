@@ -1,0 +1,33 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pkl
+ml/data/processed_dataset.csv
+ml/data/raw/
+ml/models/*.pkl
+ml/models/*.json
+
+# Node/Frontend
+node_modules
+dist/
+dist-ssr/
+*.local
+
+# Environment variables
+.env
+backend/.env
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+Thumbs.db
+Desktop.ini

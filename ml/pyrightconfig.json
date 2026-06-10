@@ -1,0 +1,15 @@
+{
+  "pythonVersion": "3.14",
+  "pythonPlatform": "Windows",
+  "pythonPath": "C:/Users/KALAI/AppData/Local/Python/pythoncore-3.14-64/python.exe",
+  "extraPaths": [
+    "C:/Users/KALAI/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages"
+  ],
+  "typeCheckingMode": "basic",
+  "reportMissingModuleSource": "none",
+  "reportMissingImports": "warning",
+  "reportMissingTypeStubs": "none",
+  "exclude": [
+    "**/__pycache__"
+  ]
+}

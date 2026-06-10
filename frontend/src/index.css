@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ── Design Tokens (No Gradients, Solid Medical Palette) ────────── */
+:root {
+  --primary:      #2563EB; /* Medical Blue */
+  --secondary:    #14B8A6; /* Soft Teal */
+  --background:   #F8FAFC; /* Light Slate Background */
+  --surface:      #FFFFFF; /* White Cards/Surfaces */
+  --text-primary: #0F172A; /* Dark Slate Text */
+  --text-muted:    #64748B; /* Medium Slate Muted Text */
+  --success:      #10B981; /* Emerald Success */
+  --warning:      #F59E0B; /* Amber Warning */
+  --danger:       #EF4444; /* Rose Danger */
+  --border:       #E2E8F0; /* Light Gray Border */
+}
+
+/* ── Base ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Solid Container Cards ───────────────────────────────────────── */
+.card-solid {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+.card-solid:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #1d4ed8; /* Darker Blue */
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background-color: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background-color: var(--danger);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-danger:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* ── Risk/Triage Badges (Solid) ────────────────────────────────── */
+.badge-low      { background-color: rgba(16, 185, 129, 0.1);  color: var(--success);  border: 1px solid rgba(16, 185, 129, 0.2); }
+.badge-medium   { background-color: rgba(245, 158, 11, 0.1);  color: var(--warning);  border: 1px solid rgba(245, 158, 11, 0.2); }
+.badge-high     { background-color: rgba(239, 68, 68, 0.1);   color: var(--danger);   border: 1px solid rgba(239, 68, 68, 0.2); }
+.badge-emergency{ background-color: #ef4444;                  color: #ffffff;         border: 1px solid #ef4444; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ── Form Inputs ────────────────────────────────────────────────── */
+.input-field {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.input-field:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+.input-field::placeholder { color: var(--text-muted); }
+
+.label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.error-msg {
+  font-size: 0.78rem;
+  color: var(--danger);
+  margin-top: 0.3rem;
+}
+
+/* ── Page Layout ────────────────────────────────────────────────── */
+.page-wrapper {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Step Indicator ─────────────────────────────────────────────── */
+.step-dot {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 600;
+  transition: all 0.3s ease;
+}
+.step-dot.active   { background-color: var(--primary); color: #ffffff; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
+.step-dot.done     { background-color: var(--success); color: #ffffff; }
+.step-dot.inactive { background-color: var(--border); color: var(--text-muted); }
+
+/* ── Slider ─────────────────────────────────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  transition: transform 0.15s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
