@@ -25,7 +25,7 @@ export default function Assessment() {
   const [selectedSymptoms, setSelectedSymptoms] = useState([])
   const [symptomDetails, setSymptomDetails] = useState(
     SYMPTOMS_LIST.reduce((acc, sym) => {
-      acc[sym] = { severity: 1, duration: 1.0, frequency: 1 }
+      acc[sym] = { severity: 1, duration: '1', frequency: 1 }
       return acc;
     }, {})
   )
@@ -316,8 +316,9 @@ export default function Assessment() {
                                 className="input-field" 
                                 value={details.duration} 
                                 min={1} 
-                                max={30} 
-                                onChange={(e) => handleDetailChange(sym, 'duration', parseFloat(e.target.value) || 1.0)} 
+                                max={365} 
+                                placeholder="Days"
+                                onChange={(e) => handleDetailChange(sym, 'duration', e.target.value)}
                               />
                             </div>
 

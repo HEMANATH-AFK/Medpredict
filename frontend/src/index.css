@@ -201,3 +201,33 @@ input[type="range"]::-webkit-slider-thumb {
   transition: transform 0.15s;
 }
 input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+
+/* ── CSS Animations (replaces FadeUp library) ───────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.7; }
+}
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+
+.anim-fade-up    { animation: fadeInUp 0.45s ease both; }
+.anim-fade-up-1  { animation: fadeInUp 0.45s 0.06s  ease both; }
+.anim-fade-up-2  { animation: fadeInUp 0.45s 0.12s  ease both; }
+.anim-fade-up-3  { animation: fadeInUp 0.45s 0.18s  ease both; }
+.anim-fade-up-4  { animation: fadeInUp 0.45s 0.24s  ease both; }
+.anim-fade-up-5  { animation: fadeInUp 0.45s 0.30s  ease both; }
+.anim-fade-up-6  { animation: fadeInUp 0.45s 0.36s  ease both; }
+.anim-fade-in    { animation: fadeIn   0.4s  ease both; }
